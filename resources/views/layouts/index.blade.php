@@ -35,7 +35,7 @@
         @endif
 
         {{-- Page Content --}}
-        <main class="container flex flex-wrap mx-auto max-w-custom">
+        <main class="container flex flex-wrap justify-center mx-auto max-w-custom">
             <div class="w-full mx-5 md:w-175">
                 <div class="mt-16">
                     {{$slot}}
