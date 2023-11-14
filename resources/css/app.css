@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+/* Vertical line to the left of the comments */
+.comments-container::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -40px;
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #edf0f5;
+    /* opacity: .07; */
+}
+
+.comment-container::before {
+    position: absolute;
+    top: 57px;
+    content: "";
+    width: 23px;
+    height: 3px;
+    background: #edf0f5;
+    left: -40px;
+    /* opacity: .07; */
+}
+
+.comment-container:last-child:after {
+    position: absolute;
+    display: block;
+    top: 60px;
+    left: -40px;
+    content: "";
+    width: 3px;
+    height: calc(100% - 60px);
+    background: '#fff';
+}
+
+.is-admin::before {
+	position: absolute;
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+    border: 7px solid white;
+    /* box-shadow: 4px 4px 15px 0 rgba(36, 37, 38, 0.08); */
+    left: -58px;
+    background: '#fff';
+    opacity: 1;
+}
+
+.is-admin {
+    border-width: 1px;
+    border-image-source: linear-gradient(266deg, #21c8f6 98%, #637bff -52%);
+    border-image-slice: 1;
+    background-image: linear-gradient(to bottom, #374151, #374151), linear-gradient(266deg, #21c8f6 98%, #637bff -52%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border-color: transparent;
+}
+
+.add-item-border {
+    border-width: 1px;
+    border-image-source: linear-gradient(to bottom, rgba(50, 138, 241, 0.22), rgba(99, 123, 255, 0));
+    border-image-slice: 1;
+    background-image: linear-gradient(to bottom, #1f2937, #1f2937), linear-gradient(to bottom, rgba(50, 138, 241, 0.22), rgba(99, 123, 255, 0));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.error {
+    color: #B33A3A;
+    font-style: italic;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.025em;
+}
+
+.input-with-placeholder {
+    /* width: 100%; */
+    position: relative;
+}
+.input-with-placeholder label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 300ms all;
+    cursor: text;
+    color: #777;
+}
+.input-with-placeholder input {
+    width: 100%;
+    height: 40px;
+}
+
+.input-with-placeholder input:focus + label,
+.input-with-placeholder input:valid + label {
+  height: 50%;
+  padding-left: 0;
+  transform: translateY(-100%);
+  font-size: 12px;
+  color: #777;
+}
