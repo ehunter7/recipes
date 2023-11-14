@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Livewire\CreateRecipe;
 use App\Http\Livewire\Lists;
-use App\Http\Livewire\StoreRecipe;
 use App\Http\Livewire\Recipes;
 use App\Http\Livewire\RecipeComponent;
 use App\Http\Livewire\ShowList;
@@ -29,7 +29,7 @@ Route::name('recipes.')->prefix('recipes')->group(function () {
         'verified'
     ])->group(function () {
         Route::get('/', Recipes::class)->name('dashboard');
-        Route::get('/new', StoreRecipe::class)->name('store_recipe');
+        Route::get('/new', CreateRecipe::class)->name('store_recipe');
         Route::get('/{recipe}', RecipeComponent::class)->name('recipe');
     });
 });

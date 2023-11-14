@@ -10,8 +10,9 @@ use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
-class StoreRecipe extends Component
+class CreateRecipe extends Component
 {
+
     use WithFileUploads;
 
     public $photo;
@@ -164,6 +165,6 @@ class StoreRecipe extends Component
 
     public function render()
     {
-        return view('livewire.store-recipe');
+        return view('livewire.create-recipe');
     }
 }
