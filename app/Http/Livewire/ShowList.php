@@ -120,6 +120,6 @@ class ShowList extends Component
 
     public function render()
     {
-        return view('livewire.show-list')->layout('layouts.index');
+        return view('livewire.show-list')->layout('components.index');
     }
 }
