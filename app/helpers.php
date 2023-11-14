@@ -19,5 +19,3 @@ function elapsed_time($timestamp, $precision = 2) {
   }
   return $result ? $result.'ago' : '1 sec to go';
 }
-// echo elapsed_time('1234567890').'<br />'; // 3 years 5 months ago
-// echo elapsed_time('1234567890', 6); // 3 years 5 months 1 week 2 days 57 mins 4 secs ago

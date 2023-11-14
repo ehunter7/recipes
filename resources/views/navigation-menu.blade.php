@@ -165,7 +165,7 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('recipes.store_recipe') }}"
                 :active="request()->routeIs('recipes.store_recipe')">
-                {{ __('Dashboard') }}
+                {{ __('Add Recipe') }}
             </x-responsive-nav-link>
         </div>
 
