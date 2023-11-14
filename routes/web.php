@@ -40,7 +40,7 @@ Route::name('lists.')->prefix('lists')->group(function () {
         config('jetstream.auth_session'),
         'verified'
     ])->group(function () {
-        Route::get('/', Lists::class)->name('lists');
+        Route::get('/', Lists::class)->name('show');
         Route::get('/{list}', ShowList::class)->name('list');
     });
 });
