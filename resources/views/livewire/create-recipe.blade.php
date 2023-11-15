@@ -1,4 +1,9 @@
 <div class="flex mt-4 bg-gray-200 dark:bg-gray-800 dark:border-gray-500 idea-container rounded-xl">
+    <x-slot name="header">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
+            {{ __('New Recipe') }}
+        </h2>
+    </x-slot>
     <form wire:submit.prevent="save" class="flex flex-col flex-1 px-4 py-6">
         <div class="flex items-center justify-center w-full">
             @if ($photo)

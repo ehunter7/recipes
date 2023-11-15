@@ -1,6 +1,11 @@
 <div class="my-6 space-y-6 ideas-container dark:bg-gray-900">
+    <x-slot name="header">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
+            {{ __('Recipes') }}
+        </h2>
+    </x-slot>
     <div class="flex space-x-6 filters">
-        <div class="w-1/3">
+        {{-- <div class="w-1/3">
             <select name="category" id="category "
                 class="w-full px-4 py-2 text-gray-700 bg-white border-none rounded-xl dark:bg-gray-800 dark:text-gray-200">
                 <option value="Category One">Category One</option>
@@ -17,7 +22,7 @@
                 <option value="Filter Three">Filter Three</option>
                 <option value="Filter Four">Filter Four</option>
             </select>
-        </div>
+        </div> --}}
         <div class="relative w-2/3">
 
             <input type="search" placeholder="Find a recipe"
@@ -60,7 +65,8 @@
                         {{-- <div>&bull;</div>
                         <div>Nates Favorite</div> --}}
                         <div class="hidden md:block">&bull;</div>
-                        <div class="text-gray-900 dark:text-white">3 Comments</div>
+                        <div class="text-gray-900 dark:text-white">{{$recipe->comments->count()}}
+                            {{$recipe->comments->count() > 1 ? 'comments' : 'comment'}}</div>
                     </div>
                     <div x-data="{isOpen: false}" class="flex items-center space-x-2">
                         <div

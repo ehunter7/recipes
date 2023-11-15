@@ -1,6 +1,11 @@
 <div class="space-y-4">
+    <x-slot name="header">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
+            {{ __($list->name) }}
+        </h2>
+    </x-slot>
     <div class="text-gray-700 dark:text-gray-200">
-        <h1>{{$list->name}}</h1>
+
         <div class="flex items-center justify-between mt-16">
             <p>{{$list->description}}</p>
             <section class="w-full sm:w-3/5">

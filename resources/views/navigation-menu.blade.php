@@ -6,10 +6,12 @@
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
                     <a href="{{ route('recipes.dashboard') }}">
-                        <x-application-mark class="block w-auto h-9" />
+                        {{--
+                        <x-application-mark class="block w-auto h-9" /> --}}
+                        <x-application-logo class="block w-auto h-12" />
+
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('recipes.dashboard') }}"

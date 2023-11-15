@@ -11,23 +11,25 @@ class AddItemModel extends Component
     public $newItem;
     public $categories = [];
 
-    public $category;
+    public $category = '';
+    public $newCategory = '';
     public $categorySet = false;
 
     public $lists;
-
-    public $listId;
+    public $list = '';
+    public $newList = '';
 
     protected $rules = [
         'newItem' => 'required|min:3',
         'category' => 'required',
-        'listId' => 'required'
+        'list' => 'required',
     ];
 
     public function mount()
     {
         $this->categories = Item::withTrashed()->orderBy('category', 'asc')->pluck('category')->unique()->all();
         $this->lists = ItemList::where('team_id', Auth()->user()->current_team_id)->get();
+        ray($this->lists[0]);
     }
 
     public function updatedNewItem()
@@ -58,20 +60,34 @@ class AddItemModel extends Component
     public function addItem()
     {
         $this->validate();
-
+        $listShuttle = ItemList::firstOrCreate([
+            'name' => $this->list
+        ],[
+            'user_id' => Auth()->id(),
+            'team_id' => Auth()->user()->current_team_id
+        ]);
         Item::create([
             'name' => $this->newItem,
             'checked' => 0,
             'user_id' => Auth()->id(),
             'team_id' => Auth()->user()->current_team_id,
-            'item_list_id' => $this->listId,
+            'item_list_id' => $listShuttle->id,
             'category' => strtolower($this->category),
         ]);
-
         $this->newItem = '';
         $this->category = '';
-        $this->listId = '';
+        $this->list = '';
         $this->emit('item_added');
+    }
+
+    public function newCategory()
+    {
+        $this->category = $this->newCategory;
+    }
+
+    public function newList()
+    {
+        $this->list = $this->newList;
     }
 
     public function render()

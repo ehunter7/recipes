@@ -61,6 +61,6 @@ class RecipeComponent extends Component
 
     public function render()
     {
-        return view('livewire.recipe-component')->layout('layouts.index');
+        return view('livewire.recipe-component')->layout('components.index');
     }
 }

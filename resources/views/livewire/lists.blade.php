@@ -1,7 +1,11 @@
 <div class="my-6 space-y-6 ideas-container dark:bg-gray-900">
-
+    <x-slot name="header">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
+            {{ __('Lists') }}
+        </h2>
+    </x-slot>
     <div class="relative flex flex-col space-x-0 space-y-4 sm:space-y-0 md:space-x-6 sm:flex-row filters">
-        <div class="flex space-x-4 md:space-x-6">
+        {{-- <div class="flex space-x-4 md:space-x-6">
             <div class="w-full sm:w-1/3">
                 <select name="category" id="category "
                     class="w-full px-4 py-2 text-gray-700 bg-white border-none rounded-xl dark:bg-gray-800 dark:text-gray-200">
@@ -20,9 +24,9 @@
                     <option value="Filter Four">Filter Four</option>
                 </select>
             </div>
-        </div>
+        </div> --}}
         <div class="relative w-full sm:w-2/3">
-            <input type="search" placeholder="Find a recipe"
+            <input type="search" placeholder="Find a list"
                 class="w-full px-4 py-2 pl-8 bg-white border-none dark:bg-gray-800 placeholder:text-gray-700 dark:placeholder:text-gray-200 rounded-xl">
             <div class="absolute top-0 flex items-center h-full ml-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -72,14 +76,12 @@
                         <div>Created: {{ elapsed_time(date_format($list->created_at, 'U')) }}</div>
                         {{-- <div>&bull;</div>
                         <div>Nates Favorite</div> --}}
-                        <div class="invisible xs:visible">&bull;</div>
-                        <div class="text-gray-900 dark:text-white">3 Comments</div>
                     </div>
                     <div x-data="{isOpen: false}" class="flex items-center space-x-2">
-                        <div
+                        {{-- <div
                             class="px-2 py-1 text-xs font-bold leading-none text-center uppercase bg-gray-200 rounded-full">
                             category
-                        </div>
+                        </div> --}}
                         <button @click="isOpen = !isOpen"
                             class="relative px-3 py-2 transition duration-150 ease-in bg-gray-100 border rounded-full hover:bg-gray-200 h-7 dark:bg-gray-700">
                             <svg fill="currentColor" width="24" height="6">
@@ -91,9 +93,7 @@
                                 @keydown.escape.window="isOpen = false" x-transition.origin.top.left
                                 class="absolute right-0 w-40 py-3 font-semibold text-left bg-white shadow-xl md:left-0 rounded-xl">
                                 <li><a href="#"
-                                        class="block px-5 py-3 transition duration-150 ease-in hover:bg-gray-100">Mark
-                                        as
-                                        junk</a>
+                                        class="block px-5 py-3 transition duration-150 ease-in hover:bg-gray-100">Delete</a>
                                 </li>
                                 {{-- <li><a href="#"
                                         class="block px-5 py-3 transition duration-150 ease-in hover:bg-gray-100">Delete
