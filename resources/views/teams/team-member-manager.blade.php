@@ -6,17 +6,18 @@
     <div class="mt-10 sm:mt-0">
         <x-form-section submit="addTeamMember">
             <x-slot name="title">
-                {{ __('Add Squad Member') }}
+                {{ __('Add Brigade Member') }}
             </x-slot>
 
             <x-slot name="description">
-                {{ __('Add a new squad member to your squad, allowing them to collaborate with you.') }}
+                {{ __('Add a new Brigade member to your Brigade, allowing them to collaborate with you.') }}
             </x-slot>
 
             <x-slot name="form">
                 <div class="col-span-6">
                     <div class="max-w-xl text-sm text-gray-600 dark:text-gray-400">
-                        {{ __('Please provide the email address of the person you would like to add to this squad.') }}
+                        {{ __('Please provide the email address of the person you would like to add to this Brigade.')
+                        }}
                     </div>
                 </div>
 
