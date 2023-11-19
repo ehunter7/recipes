@@ -41,6 +41,7 @@ class StoreList extends Component
             'user_id' => Auth()->id(),
             'team_id' => Auth()->user()->current_team_id
         ]);
+        $this->emit('refreshLists');
 
         $this->open = false;
     }

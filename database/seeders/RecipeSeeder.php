@@ -15,9 +15,9 @@ class RecipeSeeder extends Seeder
      */
     public function run(): void
     {
-        $squads = collect(Team::all());
+        $brigades = collect(Team::all());
         $users = collect(User::all());
 
-        Recipe::factory()->count(2)->recycle($squads)->recycle($users)->create();
+        Recipe::factory()->count(2)->recycle($brigades)->recycle($users)->create();
     }
 }

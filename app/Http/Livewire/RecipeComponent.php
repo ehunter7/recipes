@@ -17,7 +17,7 @@ class RecipeComponent extends Component
     public $ingredients;
     public $instructions;
     public $chef;
-    public $squad;
+    public $brigade;
     public $comments;
     public $postComment;
     public $isFavorite;
@@ -32,7 +32,7 @@ class RecipeComponent extends Component
         $this->comments = $this->recipe->comments()->get();
         $this->chef = $this->recipe->user()->first();
         $this->isAdmin = Auth()->id() === $this->chef->id;
-        $this->squad = $this->recipe->team()->first();
+        $this->brigade = $this->recipe->team()->first();
     }
 
     public function favorite()

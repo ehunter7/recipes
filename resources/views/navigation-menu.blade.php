@@ -56,17 +56,17 @@
                             <div class="w-60">
                                 <!-- Team Management -->
                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                    {{ __('Manage Squad') }}
+                                    {{ __('Manage Brigade') }}
                                 </div>
 
                                 <!-- Team Settings -->
                                 <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                    {{ __('Squad Settings') }}
+                                    {{ __('Brigade Settings') }}
                                 </x-dropdown-link>
 
                                 @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                                 <x-dropdown-link href="{{ route('teams.create') }}">
-                                    {{ __('Create New Squad') }}
+                                    {{ __('Create New Brigade') }}
                                 </x-dropdown-link>
                                 @endcan
 
@@ -224,18 +224,18 @@
                 <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                 <div class="block px-4 py-2 text-xs text-gray-400">
-                    {{ __('Manage Team') }}
+                    {{ __('Manage Brigade') }}
                 </div>
 
                 <!-- Team Settings -->
                 <x-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"
                     :active="request()->routeIs('teams.show')">
-                    {{ __('Squad Settings') }}
+                    {{ __('Brigade Settings') }}
                 </x-responsive-nav-link>
 
                 @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                 <x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
-                    {{ __('Create New Team') }}
+                    {{ __('Create New Brigade') }}
                 </x-responsive-nav-link>
                 @endcan
 
