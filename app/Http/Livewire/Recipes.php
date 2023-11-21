@@ -15,7 +15,6 @@ class Recipes extends Component
     {
         $user = auth()->user();
         $this->recipes = Recipe::where('team_id', $user->current_team_id)->with(['comments'])->get();
-        ray($this->recipes[0]);
     }
 
     public function render()
