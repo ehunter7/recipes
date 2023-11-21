@@ -127,7 +127,7 @@ class CreateRecipe extends Component
     {
         $this->validate([
             // 1MB Max
-            'photo' => 'image|max:1024',
+            'photo' => 'image|max:4032',
             'name' => 'required|min:2|max:36',
             'category' => 'required|min:2|max:36',
             'yield' => 'required|integer',
