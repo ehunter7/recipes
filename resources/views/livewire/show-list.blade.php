@@ -70,6 +70,7 @@
             <x-button wire:click="clearList()">clear checked</x-button>
         </div>
         <div class="space-y-2">
+            @if ($data)
             @foreach ($data as $key => $group)
             @php
             if($key === ''){
@@ -105,6 +106,10 @@
             </div>
             @endforeach
             @endforeach
+            @else
+
+            @endif
+
         </div>
     </div>
 </div>
